@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  databaseURL: process.env.databaseURL,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId,
+  apiKey: "AIzaSyCYgieNluU4atVEYhCcUY5GC78eqYXBYsA",
+  authDomain: "retro-games-network.firebaseapp.com",
+  databaseURL: "https://retro-games-network-default-rtdb.firebaseio.com",
+  projectId: "retro-games-network",
+  storageBucket: "retro-games-network.appspot.com",
+  messagingSenderId: "1025542945363",
+  appId: "1:1025542945363:web:c4d81a05a8a9d8809564a6"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 // get user's data
-const username = prompt("Please Tell Us Your Name");
+const username = prompt("what is ur username?");
 
 // submit form
 // listen for submit event on the form and call the postChat function
@@ -54,7 +54,7 @@ fetchChat.on("child_added", function (snapshot) {
   const messages = snapshot.val();
   const message = `<li class=${
     username === messages.username ? "sent" : "receive"
-  }><span>${messages.username}: </span>${messages.message}</li>`;
+  }><span><b>${messages.username}: </b></span>${messages.message}</li>`;
   // append the message on the page
   document.getElementById("messages").innerHTML += message;
 });
